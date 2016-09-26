@@ -1,0 +1,141 @@
+@CHARSET "ISO-8859-1";
+
+/* MAIN CSS */
+@import url('bootstrap.css');
+@import url('theme.css');
+@import url('hover-min.css');
+@import url('shop.css');
+@import url('blog.css');
+@import url('animate.css');
+@import url('debugging.css');
+@import url('custom.css'); 
+@import url('responsive.css');
+@import url('animatedbg.css'); 
+
+/* FONTS*/
+
+@import url('../webfontkit/stylesheet.css');
+@import url('../plugins/icomoon/style.css');
+@import url('../plugins/simple/simple-line-icons.css');
+
+
+
+/* PLUGIN CSS */
+
+@import url('../plugins/font-awesome/css/font-awesome.min.css');
+@import url('../plugins/yamm3/yamm/yamm.css');
+@import url('../plugins/bootstrap-vertical-tabs-master/bootstrap.vertical-tabs.min.css');
+@import url('../plugins/isotope/isotope.css');
+@import url('../plugins/magnific/magnific-popup.css');
+@import url('../plugins/prettyphoto/css/prettyPhoto.css');
+@import url('../plugins/bxslider/jquery.bxslider.css');
+@import url('../plugins/selectbox/jquery.selectbox.css');
+@import url('../plugins/nouislider/jquery.nouislider.css');
+@import url('../plugins/points/points.css');
+@import url('../plugins/flexslider/flexslider.css');
+@import url('../plugins/smart-menu/smart-menu.css');
+@import url('../plugins/loader/css/loader.css');
+@import url('../plugins/newsletter/newsletter.css');
+@import url('../plugins/bio/css/bio.css');
+@import url('../plugins/iview/css/iview.css');
+@import url('../plugins/iview/css/skin/style.css');
+
+.currentpro {
+	background-color:#EE1515;
+	}
+.currentpro a {
+	color:#fff;
+	}
+.catScroll {
+	border: none;	
+	height: 320px;
+	overflow: scroll;
+	width:auto;
+	padding:0;
+	margin:0;
+	width:250px;
+	}
+/* LOGIN CSS */
+@import url(http://fonts.googleapis.com/css?family=Roboto);
+.loginmodal-container {
+  padding: 30px;
+  max-width: 550px;
+  width: 100% !important;
+  background-color: #F7F7F7;
+  margin: 0 auto;
+  border-radius: 2px;
+  box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
+  overflow: hidden;
+  font-family: roboto;
+}
+ 
+.loginmodal-container h1 {
+  text-align: center;
+  font-size: 1.8em;
+  font-family: roboto;
+}
+ 
+.loginmodal-container input[type=submit] {
+  width: 100%;
+  display: block;
+  margin-bottom: 10px;
+  position: relative;
+}
+ 
+.loginmodal-container input[type=text], input[type=password] {
+  height: 44px;
+  font-size: 16px;
+  width: 100%;
+  margin-bottom: 10px;
+  -webkit-appearance: none;
+  background: #fff;
+  border: 1px solid #d9d9d9;
+  border-top: 1px solid #c0c0c0;
+  /* border-radius: 2px; */
+  padding: 0 8px;
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+}
+.logoText {
+	font-family:"algerian";
+	font-size:38px;
+	color:#2268EA;
+	}
+.logoText small {
+	font-family:"Segoe Print";
+	display:block;
+	font-size:17px;
+	margin-left:85px;
+	}
+.margiTop25 {
+	margin-top:28px;
+	}
+.proBox {
+	border:1px solid #7EB8E2;
+	padding:6px;
+	border-radius:4px;
+	}
+.bgcolor {
+	background-color:#E2E2E2;
+	display:block;
+	padding:5px;
+	}
+.bdrtop {
+	border-bottom:2px solid #E2E2E2;
+	}
+.btn-pink {
+	background-color:#2518ef;
+	}
+.martop {
+margin-top:20px;
+}
+
+
+
+
+
+
+
+
+
+
