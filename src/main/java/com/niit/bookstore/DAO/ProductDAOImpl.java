@@ -1,7 +1,5 @@
 package com.niit.bookstore.DAO;
 import java.util.List;
-
-
 import org.hibernate.Criteria;
 import org.hibernate.Query;
 import org.hibernate.SessionFactory;
@@ -9,23 +7,23 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
-import com.niit.bookstore.modal.*;
+import com.niit.bookstore.modal.Product;
+
 
 @Repository
-public class CategoryDAOImpl implements CategoryDAO{
-	
+public class ProductDAOImpl implements ProductDAO {
 	@Autowired
 	private SessionFactory sessionFactory;
 
 
-	public CategoryDAOImpl(SessionFactory sessionFactory) {
+	public ProductDAOImpl(SessionFactory sessionFactory) {
 		this.sessionFactory = sessionFactory;
 	}
 
 	@Transactional
-	public Boolean saveOrUpdate(Category category){
+	public boolean saveOrUpdate(Product product){
 		try {
-			sessionFactory.getCurrentSession().saveOrUpdate(category);
+			sessionFactory.getCurrentSession().saveOrUpdate(product);
 			return true;
 		} catch (Exception e) {
 			e.printStackTrace();
@@ -35,10 +33,10 @@ public class CategoryDAOImpl implements CategoryDAO{
 	} 
 
 	@Transactional
-	public Boolean delete(Category category)
+	public boolean delete(Product product)
 	    {     
 		try {
-			sessionFactory.getCurrentSession().delete(category);
+			sessionFactory.getCurrentSession().delete(product);
 			return true;
 		}
 		 catch (Exception e){
@@ -49,16 +47,16 @@ public class CategoryDAOImpl implements CategoryDAO{
 		}
 
 	@Transactional
-	public Category get(int id) {
-		String hql = "from"+"Category"+" where id=" +id;
+	public Product get(int id) {
+		String hql = "from"+" Product"+" where id=" +id;
 		//@SuppressWarnings("rawtypes")
 		Query query = sessionFactory.getCurrentSession().createQuery(hql);
 		
 		@SuppressWarnings("unchecked")
-		List<Category> listCategory = (List<Category>) query.list();
+		List<Product> listProduct = (List<Product>) query.list();
 		
-		if (listCategory != null && !listCategory.isEmpty()) {
-			return listCategory.get(0);
+		if (listProduct != null && !listProduct.isEmpty()) {
+			return listProduct.get(0);
 		}
 		
 		return null;
@@ -67,13 +65,13 @@ public class CategoryDAOImpl implements CategoryDAO{
 	//@SuppressWarnings("deprecation")
 
 	@Transactional
-  public List<Category> list(){
+  public List<Product> list(){
 		@SuppressWarnings("unchecked")
-		List<Category> listCategory = (List<Category>)
+		List<Product> listProduct = (List<Product>)
 		sessionFactory.getCurrentSession()
-		.createCriteria(Category.class)
+		.createCriteria(Product.class)
 		.setResultTransformer(Criteria.DISTINCT_ROOT_ENTITY).list();
-		return listCategory;
+		return listProduct;
 	}
 
 }
