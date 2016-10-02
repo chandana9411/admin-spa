@@ -34,17 +34,15 @@ public String addItem(@ModelAttribute("category") Category c){
 		return "redirect:/Category";
 		
 	}
-	@RequestMapping(value="/categoryeditItemById/{id}")
-	public String editItem(@PathVariable("id") int id,RedirectAttributes redirectAttributes)
+	@RequestMapping(value="/categoryeditItemById/{category_id}")
+	public String editItem(@PathVariable("category_id") int category_id,RedirectAttributes redirectAttributes)
 	{
-		
-		redirectAttributes.addFlashAttribute("category", this.categoryDAO.get(id));
-		
+		redirectAttributes.addFlashAttribute("category", this.categoryDAO.get(category_id));
 		return "redirect:/Category";
 		
 }
-	@RequestMapping(value="/categorydeleteById/{id}")
-	public String deleteItem(@PathVariable("id") int id,Category category)
+	@RequestMapping(value="/categorydeleteById/{category_id}")
+	public String deleteItem(@PathVariable("category_id") int category_id,Category category)
 	{
 		categoryDAO.delete(category);
 		return "redirect:/Category";

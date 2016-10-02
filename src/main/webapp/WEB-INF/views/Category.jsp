@@ -16,26 +16,26 @@
 
 <form:form action="${addAction}" modelAttribute="category" id="btn-add">
    <h3>
-                    <c:if test="${category.id==0}">
+                    <c:if test="${category.category_id==0}">
 		       Add New Item
 	            </c:if>
-	            <c:if test="${!empty category.id}">
-		      Update Item for Id: <c:out value="${category.id}"/>
-		      <form:hidden path="id"/>
+	            <c:if test="${!empty category.category_id}">
+		      Update Item for category_id: <c:out value="${category.category_id}"/>
+		      <form:hidden path="category_id"/>
 	            </c:if>
          </h3>
 	  <table>
 	  <!-- test=predefined keyword -->
-	  <tr>  <c:if test="${category.id!=0}">
-	  <td> Id:</td> <td><form:input  path="id"/></td> 
+	  <tr>  <c:if test="${category.category_id!=0}">
+	  <td>category_Id:</td> <td><form:input  path="category_id"/></td> 
 	   </c:if>
 	    <tr> <td> Name:</td> <td><form:input  path="name" value="${category.name}"/></td> 
 	    <tr> <td>Description:</td> <td><form:input path="description" value="${category.description}"/> </td> 
 	    <tr> <td colspan="2">
-    	        <c:if test="${category.id==0}">
+    	        <c:if test="${category.category_id==0}">
 			      <input type="submit" value="Add" id="btn-add"> 
 	         </c:if>
-	         <c:if test="${category.id!=0}">
+	         <c:if test="${category.category_id!=0}">
 			      <input type="submit" value="Update" id="btn-update"> 
 	         </c:if>
 		</td> 
@@ -52,12 +52,12 @@
 	      	</tr>
     	      <c:forEach var="obj" items="${allCategory}">
 		      <tr>
-		                 <td> <c:out value="${obj.id}"/> </td>
+		                 <td> <c:out value="${obj.category_id}"/> </td>
 		                 <td> <c:out value="${obj.name}"/> </td>
 				 <td> <c:out value="${obj.description}"/> </td>
 				
-				 <td> <a href="categorydeleteById/${obj.id}">Delete </a> |
-				     <a href="categoryeditItemById/${obj.id}">Edit</a> 
+				 <td> <a href="categorydeleteById/${obj.category_id}">Delete </a> |
+				     <a href="categoryeditItemById/${obj.category_id}">Edit</a> 
 				 </td>
 		      </tr>
 	      </c:forEach>

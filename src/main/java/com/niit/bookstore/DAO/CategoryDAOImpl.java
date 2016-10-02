@@ -54,9 +54,8 @@ public class CategoryDAOImpl implements CategoryDAO{
 	
 
 @Transactional
-public Category get(int id) {
-	// TODO Auto-generated method stub
-	String hql = "from"+" Category"+" where id=" +id;
+public Category get(int category_id) {
+	String hql = "from"+" Category"+" where category_id=" +category_id;
 	@SuppressWarnings("rawtypes")
 	Query query = sessionFactory.getCurrentSession().createQuery(hql);
 	

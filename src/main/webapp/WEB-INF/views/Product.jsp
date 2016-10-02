@@ -11,34 +11,34 @@
   <c:url var="addAction" value="addProduct" ></c:url>
 <form:form action="${addAction}" modelAttribute ="product" id="btn-add" enctype="multipart/form-data">
    <h3>
-                    <c:if test="$(product.id==0}">
+                    <c:if test="$(product.product_id==0}">
 		       Add New Item
 	            </c:if>
-	            <c:if test="${!empty product.id}">
-		      Update Item for Id: <c:out value="${product.id}"/>
-		      <form:hidden path="id"/>
+	            <c:if test="${!empty product.product_id}">
+		      Update Item for Id: <c:out value="${product.product_id}"/>
+		      <form:hidden path="product_id"/>
 	            </c:if>
          </h3>
 	  <table>
 	  
-	  <tr>  <c:if test="${product.id!=0}">
-	  <td> Id:</td> <td><form:input  path="id"/></td> 
+	  <tr>  <c:if test="${product.product_id!=0}">
+	  <td>product_id:</td> <td><form:input  path="product_id"/></td> 
 	   </c:if>
 	   
 	    <tr> <td> Name:</td> <td><form:input type="text" placeholder="product name" class="form-control name" path="name"/></td> 
           
           <td>Category:</td>
-				<td><form:select path="categoryid" required="true">
+				<td><form:select path="category_id" required="true">
 				<c:forEach items="${allCategory}" var="category">
-								<form:option class="input1" value="${category.id}">${category.name}</form:option>
+								<form:option class="input1" value="${category.category_id}">${category.name}</form:option>
 							</c:forEach>
 								</form:select></td>
 								
 							
 							<tr><td>Supplier:</td>
-				<td><form:select path="supplierid" required="true">
+				<td><form:select path="supplier_id" required="true">
 				<c:forEach items="${allSupplier}" var="supplier">
-								<form:option class="input1" value="${supplier.id}">${supplier.name}</form:option>
+								<form:option class="input1" value="${supplier.supplier_id}">${supplier.name}</form:option>
 							</c:forEach>
 								</form:select></td></tr>
 	   
@@ -49,10 +49,10 @@
 	   
 	   
 	    <tr> <td colspan="2">
-    	        <c:if test="${product.id==0}">
+    	        <c:if test="${product.product_id==0}">
 			      <input type="submit" value="Add" class="btn btn-primary id="btn-add"> 
 	         </c:if>
-	         <c:if test="${product.id!=0}">
+	         <c:if test="${product.product_id!=0}">
 			      <input type="submit" value="Update" class="btn btn-primary id="btn-update"> 
 	         </c:if>
 		</td> 
@@ -73,18 +73,18 @@
 	      	</tr>
     	      <c:forEach var="obj" items="${allproduct}">
 		      <tr>
-		         <td> <c:out value="${obj.id}"/> </td>
+		         <td> <c:out value="${obj.product_id}"/> </td>
 		         <td> <c:out value="${obj.name}"/> </td>
 				 <td> <c:out value="${obj.description}"/> </td>
-				 <td><c:out value="${obj.categoryid}"/></td>
-                 <td> <c:out value="${obj.supplierid}"/></td>
+				 <td><c:out value="${obj.category_id}"/></td>
+                 <td> <c:out value="${obj.supplier_id}"/></td>
 				 <td> <c:out value="${obj.price}"/> </td>
 				 <td><div class="thumbnail">
-								<img height="50px" width="50px" alt="${obj.id }"
-									src="<c:url value="/resources/image/product/${obj.id }.jpg"></c:url>">
+								<img height="50px" width="50px" alt="${obj.product_id }"
+									src="<c:url value="/resources/image/product/${obj.product_id }.jpg"></c:url>">
 									</div> 
-				 <td> <a href="productdeleteById/${obj.id}">Delete</a> |
-				     <a href="producteditItemById/${obj.id}">Edit</a> 
+				 <td> <a href="productdeleteById/${obj.product_id}">Delete</a> |
+				     <a href="producteditItemById/${obj.product_id}">Edit</a> 
 				 </td>
 		      </tr>
 	      </c:forEach>

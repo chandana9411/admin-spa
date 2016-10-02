@@ -57,13 +57,12 @@ public class SupplierDAOImpl implements SupplierDAO{
 	
 }
 @Transactional
-public Supplier get(int id) {
-	// TODO Auto-generated method stub
-	String hql = "from"+" Supplier"+" where id=" +id;
+public Supplier get(int supplier_id) {
+	String hql = "from"+" Supplier"+" where supplier_id=" +supplier_id;
 	@SuppressWarnings("rawtypes")
 	Query query = sessionFactory.getCurrentSession().createQuery(hql);
 	
-	@SuppressWarnings( { "unchecked", "rawtypes" })
+	@SuppressWarnings( { "unchecked", "deprecation" })
 	List<Supplier> listSupplier = (List<Supplier>) query.list();
 	
 	if (listSupplier != null && !listSupplier.isEmpty()) {

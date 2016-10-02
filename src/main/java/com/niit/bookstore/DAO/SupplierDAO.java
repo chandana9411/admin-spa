@@ -6,7 +6,7 @@ public interface SupplierDAO {
 
 	public Boolean saveOrUpdate(Supplier supplier);
     public Boolean delete(Supplier supplier);
-    public Supplier get(int id);
+    public Supplier get(int supplier_id);
     public List<Supplier> list();
 
 }

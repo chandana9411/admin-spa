@@ -15,26 +15,26 @@
 
 <form:form action="${addAction}" modelAttribute="supplier" id="btn-add">
    <h3>
-                    <c:if test="${supplier.id==0}">
+                    <c:if test="${supplier.supplier_id==0}">
 		       Add New Item
 	            </c:if>
-	            <c:if test="${!empty supplier.id}">
-		      Update Item for Id: <c:out value="${supplier.id}"/>
-		      <form:hidden path="id"/>
+	            <c:if test="${!empty supplier.supplier_id}">
+		      Update Item for Id: <c:out value="${supplier.supplier_id}"/>
+		      <form:hidden path="supplier_id"/>
 	            </c:if>
          </h3>
 	  <table>
 	  <!-- test=predefined keyword -->
-	  <tr>  <c:if test="${supplier.id!=0}">
-	  <td> Id:</td> <td><form:input  path="id"/></td> 
+	  <tr>  <c:if test="${supplier.supplier_id!=0}">
+	  <td> supplier_id:</td> <td><form:input  path="supplier_id"/></td> 
 	   </c:if>
 	    <tr> <td> Name:</td> <td><form:input  path="name" /></td> 
 	    <tr> <td>Address:</td> <td><form:input path="address" /> </td> 
 	    <tr> <td colspan="2">
-    	        <c:if test="${supplier.id==0}">
+    	        <c:if test="${supplier.supplier_id==0}">
 			      <input type="submit" value="Add" id="btn-add"> 
 	         </c:if>
-	         <c:if test="${supplier.id!=0}">
+	         <c:if test="${supplier.supplier_id!=0}">
 			      <input type="submit" value="Update" id="btn-update"> 
 	         </c:if>
 		</td> 
@@ -51,12 +51,12 @@
 	      	</tr>
     	      <c:forEach var="obj" items="${allSupplier}">
 		      <tr>
-		                 <td> <c:out value="${obj.id}"/> </td>
+		                 <td> <c:out value="${obj.supplier_id}"/> </td>
 		                 <td> <c:out value="${obj.name}"/> </td>
 				 <td> <c:out value="${obj.address}"/> </td>
 				
-				 <td> <a href="supplierdeleteById/${obj.id}">Delete </a> 
-				     <a href="suppliereditItemById/${obj.id}">Edit</a> 
+				 <td> <a href="supplierdeleteById/${obj.supplier_id}">Delete </a> 
+				     <a href="suppliereditItemById/${obj.supplier_id}">Edit</a> 
 				 </td>
 				 
 		      </tr>

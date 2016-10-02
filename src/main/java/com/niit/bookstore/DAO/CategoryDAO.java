@@ -8,7 +8,7 @@ public Boolean saveOrUpdate(Category category);
 	
 	public Boolean delete(Category category);
 	
-	public Category get(int id);
+	public Category get(int category_id);
 	
 	public List<Category> list();
 }

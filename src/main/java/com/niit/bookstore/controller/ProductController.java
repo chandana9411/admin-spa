@@ -50,7 +50,7 @@ public class ProductController {
 	            //String path = request.getSession().getServletContext().getRealPath("/resources/image/" + user.getUserid() + ".jpg");
 	    		MultipartFile image = product.getImage();
 	            //Path path;
-	            String path = request.getSession().getServletContext().getRealPath("/resources/image/Product/"+product.getId()+".jpg");
+	            String path = request.getSession().getServletContext().getRealPath("/resources/image/Product/"+product.getProduct_id()+".jpg");
 	            System.out.println("Path="+path);
 	            System.out.println("File name = " + product.getImage().getOriginalFilename());
 	          

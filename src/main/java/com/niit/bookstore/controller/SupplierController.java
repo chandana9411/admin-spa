@@ -35,15 +35,15 @@ public String addItem(@ModelAttribute("supplier")Supplier supplier){
 		return "redirect:/Supplier";
 		
 	}
-	@RequestMapping(value="/suppliereditItemById/{id}")
-	public String editItem(@PathVariable("id") int id,RedirectAttributes redirectAttributes)
+	@RequestMapping(value="/suppliereditItemById/{supplier_id}")
+	public String editItem(@PathVariable("supplier_id") int supplier_id,RedirectAttributes redirectAttributes)
 	{
-		redirectAttributes.addFlashAttribute("supplier", this.supplierDAO.get(id));
+		redirectAttributes.addFlashAttribute("supplier", this.supplierDAO.get(supplier_id));
 		return "redirect:/Supplier";
 		
 }
-	@RequestMapping(value="/supplierdeleteById/{id}")
-	public String deleteItem(@PathVariable("id") int id,Supplier supplier)
+	@RequestMapping(value="/supplierdeleteById/{supplier_id}")
+	public String deleteItem(@PathVariable("supplier_id") int supplier_id,Supplier supplier)
 	{
 		supplierDAO.delete(supplier);
 		return "redirect:/Supplier";
