@@ -49,7 +49,7 @@
 				 <td> Address</td>
 				 <td colspan="2"> Action </td>
 	      	</tr>
-    	      <c:forEach var="obj" items="${allData}">
+    	      <c:forEach var="obj" items="${allSupplier}">
 		      <tr>
 		                 <td> <c:out value="${obj.id}"/> </td>
 		                 <td> <c:out value="${obj.name}"/> </td>

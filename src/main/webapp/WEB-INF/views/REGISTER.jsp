@@ -1,4 +1,4 @@
-
+<!-- 
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -8,7 +8,7 @@
 
 <title>BIBLIO | Online Book Store</title>
 
-<!-- Master CSS -->
+Master CSS
 <link href="css/master.css" rel="stylesheet">
 <link href="css/theme.css" rel="stylesheet">
 <style>
@@ -17,12 +17,12 @@
 		}
 </style>
 
-<!-- jQuery-->
+jQuery
 <script src="js/jquery-1.11.1.min.js"></script>
 <script src="js/jquery-migrate-1.2.1.min.js"></script>
 <script src="js/jquery-ui.min.js"></script>
 
-<!-- Bootstrap Core JavaScript -->
+Bootstrap Core JavaScript
 <script src="js/bootstrap.min.js"></script>
 <script src="js/modernizr.js"></script>
 
@@ -100,7 +100,7 @@
 			 			<div class="panel-body">
 			    		<form role="form">
 
-<!-- Text input-->
+Text input
 <div class="form-group">
   <label class="col-md-4 control-label" for="fn">First name</label>  
   <div class="col-md-6">
@@ -109,7 +109,7 @@
   </div>
 </div>
 
-<!-- Text input-->
+Text input
 <div class="form-group">
   <label class="col-md-4 control-label" for="ln">Last name</label>  
   <div class="col-md-6">
@@ -119,7 +119,7 @@
 </div>
 
 
-<!-- Text input-->
+Text input
 <div class="form-group">
   <label class="col-md-4 control-label" for="email">Email</label>  
   <div class="col-md-6">
@@ -128,7 +128,7 @@
   </div>
 </div>
 
-<!-- Text input-->
+Text input
 <div class="form-group">
   <label class="col-md-4 control-label" for="password">Password</label>  
   <div class="col-md-6">
@@ -137,7 +137,7 @@
   </div>
 </div>
 
-<!-- Text input-->
+Text input
 <div class="form-group">
   <label class="col-md-4 control-label" for="password_confirmation">Confirm Password</label>  
   <div class="col-md-6">
@@ -146,7 +146,7 @@
   </div>
 </div>
 
-<!-- Text input-->
+Text input
 <div class="form-group">
   <label class="col-md-4 control-label" for="phone">Phone Number</label>  
   <div class="col-md-6">
@@ -219,14 +219,15 @@
 </footer>
 <script type="text/javascript" src="js/blazy.min.js"></script> 
 
-<!--Waypoint--> 
+Waypoint 
 <script src="js/waypoints.min.js"></script> 
-<!--Element form Styled--> 
+Element form Styled 
 <script src="plugins/selectbox/jquery.selectbox-0.2.js"></script> 
 
-<!--Scripts--> 
+Scripts 
 <script type="text/javascript" src="js/scripts.js"></script>
 
 </body>
 
 </html>
+ -->

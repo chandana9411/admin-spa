@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!-- <!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="utf-8">
@@ -7,7 +7,7 @@
 
 <title>BIBLIO | Online Book Store</title>
 
-<!-- Master CSS -->
+Master CSS
 <link href="css/master.css" rel="stylesheet">
 <link href="css/theme.css" rel="stylesheet">
 <style>
@@ -16,12 +16,12 @@
 		}
 </style>
 
-<!-- jQuery-->
+jQuery
 <script src="js/jquery-1.11.1.min.js"></script>
 <script src="js/jquery-migrate-1.2.1.min.js"></script>
 <script src="js/jquery-ui.min.js"></script>
 
-<!-- Bootstrap Core JavaScript -->
+Bootstrap Core JavaScript
 <script src="js/bootstrap.min.js"></script>
 <script src="js/modernizr.js"></script>
 
@@ -127,14 +127,15 @@ We strive to transform the way India shops and the way India sells.</p>
 </footer>
 <script type="text/javascript" src="js/blazy.min.js"></script> 
 
-<!--Waypoint--> 
+Waypoint 
 <script src="js/waypoints.min.js"></script> 
-<!--Element form Styled--> 
+Element form Styled 
 <script src="plugins/selectbox/jquery.selectbox-0.2.js"></script> 
 
-<!--Scripts--> 
+Scripts 
 <script type="text/javascript" src="js/scripts.js"></script>
 
 </body>
 
 </html>
+ -->

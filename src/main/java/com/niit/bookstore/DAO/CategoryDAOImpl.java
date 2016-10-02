@@ -11,6 +11,7 @@ import org.springframework.transaction.annotation.Transactional;
 
 import com.niit.bookstore.modal.*;
 
+@SuppressWarnings("deprecation")
 @Repository
 public class CategoryDAOImpl implements CategoryDAO{
 	
@@ -48,22 +49,27 @@ public class CategoryDAOImpl implements CategoryDAO{
 		}
 		}
 
-	@Transactional
-	public Category get(int id) {
-		String hql = "from"+"Category"+" where id=" +id;
-		//@SuppressWarnings("rawtypes")
-		Query query = sessionFactory.getCurrentSession().createQuery(hql);
-		
-		@SuppressWarnings("unchecked")
-		List<Category> listCategory = (List<Category>) query.list();
-		
-		if (listCategory != null && !listCategory.isEmpty()) {
-			return listCategory.get(0);
-		}
-		
-		return null;
-	}
 	
+	
+	
+
+@Transactional
+public Category get(int id) {
+	// TODO Auto-generated method stub
+	String hql = "from"+" Category"+" where id=" +id;
+	@SuppressWarnings("rawtypes")
+	Query query = sessionFactory.getCurrentSession().createQuery(hql);
+	
+	@SuppressWarnings( { "unchecked" })
+	List<Category> listCategory = (List<Category>) query.list();
+	
+	if (listCategory != null && !listCategory.isEmpty()) {
+		return listCategory.get(0);
+	}
+	return null;
+}
+
+
 	//@SuppressWarnings("deprecation")
 
 	@Transactional

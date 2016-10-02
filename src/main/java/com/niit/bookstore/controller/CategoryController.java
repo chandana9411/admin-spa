@@ -23,7 +23,7 @@ public class CategoryController {
 	{
 		ModelAndView mv=new ModelAndView("/admin");
 		mv.addObject("userclickedcategory", "true");
-		mv.addObject("allData",categoryDAO.list());
+		mv.addObject("allCategory",categoryDAO.list());
 		return mv;
 				
 	}

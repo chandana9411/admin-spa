@@ -23,26 +23,26 @@ public class SupplierController {
 	{
 		ModelAndView mv= new ModelAndView("/admin");
 		mv.addObject("userclickedsupplier", "true");
-		mv.addObject("allData",supplierDAO.list());
+		mv.addObject("allSupplier",supplierDAO.list());
 		return mv;
 	}
 	 
 	
-	@RequestMapping(value="/addsupplier",method = RequestMethod.POST)
+	@RequestMapping(value="/addsupplier")
 public String addItem(@ModelAttribute("supplier")Supplier supplier){
 	
 		this.supplierDAO.saveOrUpdate(supplier);
 		return "redirect:/Supplier";
 		
 	}
-	@RequestMapping(value="/suppliereditItemById/{id}",method = RequestMethod.GET)
+	@RequestMapping(value="/suppliereditItemById/{id}")
 	public String editItem(@PathVariable("id") int id,RedirectAttributes redirectAttributes)
 	{
-		redirectAttributes.addFlashAttribute("supplier", supplierDAO.get(id));
+		redirectAttributes.addFlashAttribute("supplier", this.supplierDAO.get(id));
 		return "redirect:/Supplier";
 		
 }
-	@RequestMapping(value="/supplierdeleteById/{id}",method = RequestMethod.GET)
+	@RequestMapping(value="/supplierdeleteById/{id}")
 	public String deleteItem(@PathVariable("id") int id,Supplier supplier)
 	{
 		supplierDAO.delete(supplier);

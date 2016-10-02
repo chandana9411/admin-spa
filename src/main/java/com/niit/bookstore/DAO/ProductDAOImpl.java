@@ -10,6 +10,7 @@ import org.springframework.transaction.annotation.Transactional;
 import com.niit.bookstore.modal.Product;
 
 
+@SuppressWarnings("deprecation")
 @Repository
 public class ProductDAOImpl implements ProductDAO {
 	@Autowired
