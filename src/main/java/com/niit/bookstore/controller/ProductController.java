@@ -1,6 +1,10 @@
 package com.niit.bookstore.controller;
+
 import java.io.File;
 import java.io.IOException;
+import java.nio.file.Path;
+import java.nio.file.Paths;
+
 import javax.servlet.http.HttpServletRequest;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -22,17 +26,18 @@ import com.niit.bookstore.modal.*;
 @Controller
 public class ProductController {
 	@Autowired
-	private ProductDAO productDAO;
+  ProductDAO productDAO;
 	@Autowired
-	private CategoryDAO categoryDAO;
+ CategoryDAO categoryDAO;
 	@Autowired
-	private SupplierDAO supplierDAO;
+ SupplierDAO supplierDAO;
+	//private Path path;
 	
 	@RequestMapping(value="/Product",method = RequestMethod.GET)
 	public ModelAndView landPage(@ModelAttribute("product")Product product,BindingResult result,Model model)
 	{
 		
-		ModelAndView mv=new ModelAndView("/admin");
+		ModelAndView mv=new ModelAndView("/Product");
 		mv.addObject("userclickedproduct", "true");
 		mv.addObject("allproduct",productDAO.list());
 		mv.addObject("allCategory",categoryDAO.list());
@@ -41,7 +46,29 @@ public class ProductController {
 		
 	}
 	 
-	
+	/*@RequestMapping(value = { "addproduct" }, method = RequestMethod.POST)
+	public String addProduct(@ModelAttribute("product") Product product, HttpServletRequest request,
+			RedirectAttributes attributes) {
+		attributes.addFlashAttribute("SuccessMessage", "Product has been added/Updated Successfully");
+		productDAO.saveOrUpdate(product);
+		MultipartFile file = product.getImage();
+		String rootDirectory = request.getSession().getServletContext().getRealPath("/");
+		path = Paths.get(rootDirectory + "\\resources\\image\\product\\" + product.getProduct_id() + ".jpg");
+		if (file != null && !file.isEmpty()) {
+			try {
+				System.out.println("Image Saving Start");
+				file.transferTo(new File(path.toString()));
+				System.out.println("Image Saved");
+			} catch (Exception e) {
+				e.printStackTrace();
+				System.out.println("Error");
+				throw new RuntimeException("item image saving failed.", e);
+			}
+		
+		}
+		
+		return "redirect:/Product";
+	}	*/
 	@RequestMapping(value="/addProduct")
 	public String addProduct(@ModelAttribute("product") Product product , Model model,HttpServletRequest request, MultipartFile file) throws IOException
 	{
@@ -50,7 +77,7 @@ public class ProductController {
 	            //String path = request.getSession().getServletContext().getRealPath("/resources/image/" + user.getUserid() + ".jpg");
 	    		MultipartFile image = product.getImage();
 	            //Path path;
-	            String path = request.getSession().getServletContext().getRealPath("/resources/image/Product/"+product.getProduct_id()+".jpg");
+	            String path = request.getSession().getServletContext().getRealPath("/resources/image/product/"+product.getProduct_id()+".jpg");
 	            System.out.println("Path="+path);
 	            System.out.println("File name = " + product.getImage().getOriginalFilename());
 	          
@@ -69,19 +96,19 @@ public class ProductController {
 	            }
 	    	
 	     	    
-	    return "Product";
+	    return "redirect:/Product";
 	
 		
 	}
-	@RequestMapping(value="/producteditItemById/{id}")
-	public String editItem(@PathVariable("id") int id,RedirectAttributes redirectAttributes)
+	@RequestMapping(value="/producteditItemById/{product_id}")
+	public String editItem(@PathVariable("product_id") int product_id,RedirectAttributes redirectAttributes)
 	{
-		redirectAttributes.addFlashAttribute("product", this.productDAO.get(id));
+		redirectAttributes.addFlashAttribute("product",productDAO.get(product_id));
 		return "redirect:/Product";
 		
 }
-	@RequestMapping(value="/productdeleteById/{id}")
-	public String deleteItem(@PathVariable("id") int id,Product product)
+	@RequestMapping(value="/productdeleteById/{product_id}")
+	public String deleteItem(@PathVariable("product_id") int product_id,Product product)
 	{
 		productDAO.delete(product);
 		return "redirect:/Product";
