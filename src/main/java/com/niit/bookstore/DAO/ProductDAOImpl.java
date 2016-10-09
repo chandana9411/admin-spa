@@ -3,6 +3,8 @@ import java.util.List;
 import org.hibernate.Criteria;
 import org.hibernate.Query;
 import org.hibernate.SessionFactory;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
@@ -13,6 +15,9 @@ import com.niit.bookstore.modal.Product;
 @SuppressWarnings("deprecation")
 @Repository
 public class ProductDAOImpl implements ProductDAO {
+	
+	private static final Logger logger = LoggerFactory.getLogger(ProductDAOImpl.class);
+	
 	@Autowired
 	private SessionFactory sessionFactory;
 
@@ -24,9 +29,12 @@ public class ProductDAOImpl implements ProductDAO {
 	@Transactional
 	public boolean saveOrUpdate(Product product){
 		try {
+			   logger.debug("Session started");
 			sessionFactory.getCurrentSession().saveOrUpdate(product);
+			   logger.debug("Product has been saved:"+product.getProduct_id());
 			return true;
 		} catch (Exception e) {
+			   logger.error("Operation failed");
 			e.printStackTrace();
 			return false;
 		}
@@ -37,10 +45,13 @@ public class ProductDAOImpl implements ProductDAO {
 	public boolean delete(Product product)
 	    {     
 		try {
+			logger.info("Product deletion started");
 			sessionFactory.getCurrentSession().delete(product);
+			  logger.info("Product Id:"+product.getProduct_id()+"has been deleted");
 			return true;
 		}
 		 catch (Exception e){
+			  logger.error("Delete operation failed");
 			e.printStackTrace();
 		
 		return false;
