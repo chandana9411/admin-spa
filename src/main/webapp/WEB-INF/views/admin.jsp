@@ -6,7 +6,7 @@
 <head>
 <title>Admin</title>
 <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
-<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" rel="stylesheet" integrity="sha256-MfvZlkHCEqatNoGiOXveE8FIwMzZg4W85qfrfIFBfYc= sha512-dTfge/zgoMYpP7QbHy4gWMEGsbsdZeCXz7irItjcC3sPUFtf0kuFbDz/ixG7ArTxmDjLXDmezHubeNikyKGVyQ==" crossorigin="anonymous">
+<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" rel="stylesheet">
  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
@@ -34,8 +34,6 @@ header
       background-color: #f2f2f2;
       padding: 25px;
     }
-
-
 </style>
 
 </head>
@@ -61,7 +59,7 @@ header
     </div>
     <div class="collapse navbar-collapse" id="myNavbar">
       <ul class="nav navbar-nav">
-        <li class="active"><a href="admin">Home</a></li>
+        <li class="active"><a href="Home">Home</a></li>
         <li><a href="Product">Product</a></li>
         <li><a href="Supplier"> Supplier</a></li>
         <li><a href="Category"> Category</a></li>
@@ -73,12 +71,13 @@ header
   </div>
 </nav>
 <div class="container-fluid bg-1 text-center">
-  <div class="container text-center">
+  <div class="container text-center"> 
     <h3 class="margin">BOOK STORE</h3>
-    <img src="C:\Users\chandu\Desktop\html\img\BooksSlider.gif" class="img-circle" alt="Bird" width="350" height="350">
+    <img src="C:/Users/saichandana/Desktop/html book/imgBooksSlider.gif" class="img-circle" alt="Bird" width="350" height="350">
     <h3>ENTER INTO ADMIN'S WORLD</h3>
+    </div>
   </div>
-</div>
+
 
 ${msg}
 <c:choose>
@@ -96,8 +95,13 @@ ${msg}
 <c:import url="/WEB-INF/views/Category.jsp"/>
 </c:when>
 </c:choose>
+<c:choose>
+<c:when test="${userclickedhome}">
+<c:import url="/WEB-INF/views/Home.jsp"/>
+</c:when>
+</c:choose>
 
-<!-- // -->
+
 <div class="container">
     <hr>
         <div class="text-center center-block">

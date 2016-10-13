@@ -85,5 +85,20 @@ public class ProductDAOImpl implements ProductDAO {
 		.setResultTransformer(Criteria.DISTINCT_ROOT_ENTITY).list();
 		return listProduct;
 	}
+	@Transactional
+	public Object getproduct(int product_id) {
+		
+		  @SuppressWarnings("unchecked")
+		  
+		 
+		   String hql="from Product where product_id= "+product_id;
+		   @SuppressWarnings("rawtypes")
+		   Query query = sessionFactory.getCurrentSession().createQuery(hql);
+		   List<Product> listProduct = (List<Product>) query.list();
+		   return listProduct;
+		  }
 
-}
+	}
+
+
+

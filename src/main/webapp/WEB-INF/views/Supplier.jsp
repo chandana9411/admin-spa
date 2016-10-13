@@ -14,9 +14,7 @@
 	rel="stylesheet">
 <link
 	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css"
-	rel="stylesheet"
-	integrity="sha256-MfvZlkHCEqatNoGiOXveE8FIwMzZg4W85qfrfIFBfYc= sha512-dTfge/zgoMYpP7QbHy4gWMEGsbsdZeCXz7irItjcC3sPUFtf0kuFbDz/ixG7ArTxmDjLXDmezHubeNikyKGVyQ=="
-	crossorigin="anonymous">
+	rel="stylesheet">
 <link rel="stylesheet"
 	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 <script
@@ -32,25 +30,20 @@ table {
 	border-collapse: collapse;
 	width: 60%;
 }
-
 .navbar-header {
 	font-size: 10px;
 }
-
 th, td {
 	text-align: left;
 	padding: 8px;
 }
-
 tr:nth-child(even) {
 	background-color: #f2f2f2
 }
-
 th {
 	background-color: #4CAF50;
 	color: white;
 }
-
 header {
 	padding: 01em;
 	color: blue;
@@ -60,13 +53,11 @@ header {
 	font-family
 	=algerian;
 }
-
 /* Add a gray background color and some padding to the footer */
 footer {
 	background-color: #f2f2f2;
 	padding: 25px;
 }
-
 .navbar {
 	margin-bottom: 5px;
 	border-radius: 0;
@@ -98,7 +89,7 @@ footer {
 				<h1>BIBLIO</h1>
 				<p>
 					Explore the world of books
-					</style>
+					</p>
 			</header>
 		</div>
 	</div>

@@ -15,9 +15,7 @@
 	rel="stylesheet">
 <link
 	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css"
-	rel="stylesheet"
-	integrity="sha256-MfvZlkHCEqatNoGiOXveE8FIwMzZg4W85qfrfIFBfYc= sha512-dTfge/zgoMYpP7QbHy4gWMEGsbsdZeCXz7irItjcC3sPUFtf0kuFbDz/ixG7ArTxmDjLXDmezHubeNikyKGVyQ=="
-	crossorigin="anonymous">
+	rel="stylesheet">
 <link rel="stylesheet"
 	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 <script
@@ -33,20 +31,16 @@ table {
 	border-collapse: collapse;
 	width: 60%;
 }
-
 .navbar-header {
 	font-size: 10px;
 }
-
 th, td {
 	text-align: left;
 	padding: 8px;
 }
-
 tr:nth-child(even) {
 	background-color: #f2f2f2
 }
-
 header {
 	padding: 01em;
 	color: blue;
@@ -56,13 +50,11 @@ header {
 	font-family
 	=algerian;
 }
-
 /* Add a gray background color and some padding to the footer */
 footer {
 	background-color: #f2f2f2;
 	padding: 25px;
 }
-
 .navbar {
 	margin-bottom: 5px;
 	border-radius: 0;
@@ -227,8 +219,8 @@ footer {
 						<td>{{product.supplierid}}</td>
 						<td>{{product.price}}</td>
 						<td><div class="thumbnail">
-								<img height="50px" width="50px" alt="${product_id}"
-									src="<c:url value="/resources/image/product/${product_id}.jpg"></c:url>">
+								<img height="50px" width="50px" alt="{{product.product_id}}"
+									src="<c:url value="/resources/image/product/{{product.product_id}}.jpg"></c:url>">
 							</div>
 						<td class="text-center"><a class="btn btn-danger btn-xs"
 							href="productdeleteById/{{product.product_id}}">Delete</a> | <a
